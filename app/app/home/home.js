@@ -7,21 +7,22 @@
         .controller('HomeController', HomeController);
 
 
-    HomeController.$inject = ['Messages', 'StarWarsMoviesService'];
+    // HomeController.$inject = ['Movies'];
 
-    function HomeController(Messages, StarWarsMoviesService, MoviePosterService) {
+    function HomeController(Movies) {
         var vm = this;
         vm.title = 'Home Page';
         vm.body = 'This is the about home body';
 
-        vm.message = Messages.getMessage();
+        // vm.message = Messages.getMessage();
 
-        vm.updateMessage = function (m) {
-            Messages.setMessage(m);
-        };
+        // vm.updateMessage = function (m) {
+        //     Messages.setMessage(m);
+        // };
 
-        StarWarsMoviesService.getMovies();
+        vm.movies= Movies;
 
+        console.debug('Movies', Movies)
     };
 
 
@@ -31,7 +32,12 @@
         $stateProvider.state('home', {
             url: '/home',
             templateUrl: 'app/home/home.tmpl.html',
-            controller: 'HomeController as home'
+            controller: 'HomeController as home',
+            resolve:{
+                Movies: function(StarWarsMoviesService){
+                    return  StarWarsMoviesService.getMovies();
+                }
+            }        
         });
     };
 })(this.angular)
