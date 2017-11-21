@@ -4,7 +4,8 @@
 
     angular.module('libraries', [
         'ui.router',
-        'xyz.angular.swapi'
+        'mr.themoviedb',
+        'mr.swapi',
     ]);
 })(this.angular);
 

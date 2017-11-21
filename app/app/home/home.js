@@ -1,42 +1,15 @@
 (function (angular) {
     'use strict';
+
     angular
         .module('myApp.home', ['libraries', 'myApp.models.messages'])
         .config(stateConfig)
-        .factory('swapiApiService', swapiApiService)
         .controller('HomeController', HomeController);
 
-    swapiApiService.$inject = ['$q', 'swapiService'];
 
+    HomeController.$inject = ['Messages', 'StarWarsMoviesService'];
 
-    function swapiApiService($q, swapiService) {
-        var self = {};
-
-
-        self.getMovies = function () {
-            var promise = swapiService.films();
-
-            promise
-                .then(function (response) {
-                    console.debug('movies', response);
-                })
-                .catch(function (err) {
-                    console.warn(err);
-                })
-
-            return promise;
-        };
-
-
-        return {
-            getMovies: self.getMovies
-        };
-    };
-
-
-    HomeController.$inject = ['Messages', 'swapiApiService'];
-
-    function HomeController(Messages, swapiApiService) {
+    function HomeController(Messages, StarWarsMoviesService, MoviePosterService) {
         var vm = this;
         vm.title = 'Home Page';
         vm.body = 'This is the about home body';
@@ -47,7 +20,7 @@
             Messages.setMessage(m);
         };
 
-        swapiApiService.getMovies();
+        StarWarsMoviesService.getMovies();
 
     };
 
