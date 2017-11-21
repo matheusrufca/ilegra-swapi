@@ -1,0 +1,41 @@
+<!doctype html>
+<html ng-app="myApp">
+
+<head>
+    <title>AngularJS Website</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="assets/css/website.css" rel="stylesheet" />
+</head>
+
+<body>
+    <!-- top -->
+    <header id="header">
+        <h1 id="logo">
+            <a href="#/home"></a>
+        </h1>
+        <div id="menu">
+            <a href="#/home" class="btn btn-default">Home</a>
+            <a href="#/about" class="btn btn-default">About</a>
+            <a href="#/experiments" class="btn btn-default">Experiments</a>
+        </div>
+        <div class="clear"></div>
+    </header>
+    <!-- //top -->
+    <div id="container">
+        <div ui-view></div>
+    </div>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-mocks/angular-mocks.js"></script>
+    <script src="bower_components/xyz-angular-swapi/dist/xyz-angular-swapi.min.js"></script>
+
+    <script src="app/libraries.module.js"></script>
+    <script src="app/app.js"></script>
+    <script src="app/common/models/messages-model.js"></script>
+    <script src="app/about/about.js"></script>
+    <script src="app/experiments/experiments.js"></script>
+    <script src="app/home/home.js"></script>
+</body>
+
+</html>
