@@ -1,22 +1,18 @@
-/**
- * @namespace app.directives
- */
-
 (function () {
 	'use strict';
 	var templateUrl;
 
-	templateUrl = 'app/common/movie-view.directive/tpl-movie-view.html'
+	templateUrl = 'app/home/tpl-movie-view.html'
 
 	angular
-		.module('app.directives', [])
+		.module('app.ui.home.directives', [])
 		.directive('movieItemView', movieItemView);
 
-	movieItemView.$inject = ['$window', '$timeout', '$compile', '$rootScope', 'MoviePosterService'];
+	movieItemView.$inject = ['MoviePosterService'];
 
 
 
-	function movieItemView($window, $timeout, $compile, $rootScope, MoviePosterService) {
+	function movieItemView(MoviePosterService) {
 		var self = {},
 			linkFn;
 
@@ -28,7 +24,6 @@
 				scope.content.posterUrl = posterUrl;
 			});
 		};
-
 
 		return {
 			restrict: 'E',
@@ -42,17 +37,5 @@
 		function getContentId(contentUrl) {
 			return (contentUrl || '').split('/').splice(-2).join('');
 		};
-	};
-
-
-
-	//TODO: move function to global 
-	window.toggleState = function toggleState(state, currentState) {
-		if (state !== undefined) {
-			state = !!state;
-		} else {
-			state = !(!!currentState);
-		}
-		return state;
 	};
 })();

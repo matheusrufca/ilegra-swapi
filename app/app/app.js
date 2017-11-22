@@ -2,8 +2,8 @@
     angular
         .module('myApp', [
             'libraries',
-            'myApp.home',
-            'myApp.detail'
+            'app.ui.home',
+            'app.ui.detail'
         ])
         .config(stateConfig);
 

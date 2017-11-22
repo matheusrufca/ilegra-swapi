@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('myApp.detail', ['libraries', 'app.directives'])
+        .module('app.ui.detail', ['libraries', 'app.ui.detail.directives'])
         .config(stateConfig)
         .controller('MovieDetailController', MovieDetailController);
 
@@ -17,13 +17,12 @@
         console.debug('Movie', Movie);
     };
 
-
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
         $stateProvider.state('detail', {
             url: '/detail/:id',
-            templateUrl: 'app/detail/detail.tmpl.html',
+            templateUrl: 'app/detail/index.html',
             controller: 'MovieDetailController as detail',
             resolve: {
                 Movie: function (StarWarsMoviesService, $transition$) {

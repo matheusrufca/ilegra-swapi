@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('myApp.home', ['libraries', 'app.directives'])
+        .module('app.ui.home', ['libraries', 'app.ui.home.directives'])
         .config(stateConfig)
         .controller('HomeController', HomeController);
 
@@ -21,7 +21,7 @@
     function stateConfig($stateProvider, $urlRouterProvider) {
         $stateProvider.state('home', {
             url: '/home',
-            templateUrl: 'app/home/home.tmpl.html',
+            templateUrl: 'app/home/index.html',
             controller: 'HomeController as home',
             resolve: {
                 Movies: function (StarWarsMoviesService) {
