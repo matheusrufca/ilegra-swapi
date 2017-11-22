@@ -1,0 +1,7 @@
+<a href="#" class="movie-item-view">
+    <div class="poster">
+        <img src="assets/img/spinner-bar.gif" class="spinner ng-animate" ng-hide="content.posterUrl" />
+        <img ng-src="{{content.posterUrl}}" ng-show="content.posterUrl" class="movie-poster ng-animate" />
+    </div>
+    <div ng-bind="content.title" class="title text-center"></div>
+</a>

@@ -32,9 +32,7 @@
     MoviePosterService.$inject = ['$q', '$http', 'API_BASEURL', 'posterBaseUrl'];
 
     function MoviePosterService($q, $http, API_BASEURL, posterBaseUrl) {
-
         var self = {};
-
 
         self.getPoster = function (movieName) {
             var endpoint, config, df = $q.defer();
@@ -68,8 +66,6 @@
 
             return df.promise;
         };
-
-
 
         return {
             getPoster: self.getPoster
