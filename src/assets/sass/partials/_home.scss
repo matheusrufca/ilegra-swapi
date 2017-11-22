@@ -1,1 +1,25 @@
+.movie-view-wrapper {
+	margin-bottom: 20px;
+}
 
+.movie-item-view {
+	display: inline-block;
+	margin: auto;
+	.spinner {
+		width: 30%;
+		margin-top: 50px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.movie-poster {
+		height: 100%;
+		max-width: 100%;
+		max-height: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.title {
+		padding: 10px;
+		@extend .text-ellipsis;
+	}
+}

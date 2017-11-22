@@ -18,6 +18,7 @@ var distDirectories = {
 
 var libs = [
 	'./bower_components/angular/angular.min.js',
+	'./bower_components/angular-animate/angular-animate.min.js',
 	'./bower_components/angular-mocks/angular-mocks.js',
 	'./bower_components/angular-ui-router/release/angular-ui-router.min.js',
 	'./bower_components/xyz-angular-swapi/dist/xyz-angular-swapi.min.js',
