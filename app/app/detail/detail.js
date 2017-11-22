@@ -2,27 +2,30 @@
     'use strict';
 
     angular
-        .module('myApp.home', ['libraries', 'app.directives'])
+        .module('myApp.detail', ['libraries', 'app.directives'])
         .config(stateConfig)
-        .controller('HomeController', HomeController);
+        .controller('HomeController', MovieDetailController);
 
 
     // HomeController.$inject = ['Movies'];
 
-    function HomeController(Movies, MoviePosterService) {
+    function MovieDetailController(Movies, MoviePosterService) {
         var vm = this;
 
         vm.movies = Movies;
+
+        MoviePosterService.getPoster(Movies[0].title)
+        console.debug('Movies', Movies)
     };
 
 
     stateConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
     function stateConfig($stateProvider, $urlRouterProvider) {
-        $stateProvider.state('home', {
-            url: '/home',
-            templateUrl: 'app/home/home.tmpl.html',
-            controller: 'HomeController as home',
+        $stateProvider.state('detail', {
+            url: '/detail/:id',
+            templateUrl: 'app/detail/detail.tmpl.html',
+            controller: 'MovieDetailController as detail',
             resolve: {
                 Movies: function (StarWarsMoviesService, MoviePosterService) {
                     return StarWarsMoviesService.getMovies();

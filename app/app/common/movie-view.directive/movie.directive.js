@@ -21,6 +21,9 @@
 			linkFn;
 
 		linkFn = function (scope, element, attrs) {
+
+			scope.content.id = getContentId(scope.content.url);
+
 			MoviePosterService.getPoster(scope.content.title).then(function (posterUrl) {
 				scope.content.posterUrl = posterUrl;
 			});
@@ -34,6 +37,10 @@
 			scope: {
 				content: '='
 			}
+		};
+
+		function getContentId(contentUrl) {
+			return (contentUrl || '').split('/').splice(-2).join('');
 		};
 	};
 

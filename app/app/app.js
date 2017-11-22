@@ -2,10 +2,8 @@
     angular
         .module('myApp', [
             'libraries',
-            'myApp.models.messages',
-            'myApp.about',
-            'myApp.experiments',
-            'myApp.home'
+            'myApp.home',
+            'myApp.detail'
         ])
         .config(stateConfig);
 
