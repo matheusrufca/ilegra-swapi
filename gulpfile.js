@@ -3,7 +3,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 
-var srcDirectories = {
+var sourceDirectories = {
 	'sass': './src/assets/sass/',
 	'sassPartials': './src/assets/sass/partials/',
 	'scripts': './src/assets/app/',
@@ -15,22 +15,6 @@ var distDirectories = {
 	'scripts': './dist/assets/',
 	'images': './dist/assets/img/'
 };
-
-gulp.task('sass', function () {
-	gulp.src(srcDirectories.sass + '*.scss')
-		.pipe(sass.sync().on('error', sass.logError))
-		.pipe(gulp.dest(distDirectories.stylesheets));
-});
-
-gulp.task('default', ['sass', 'scripts', 'images'], function () {
-	gulp.watch(srcDirectories.sass + '*.scss', ['sass']);
-	gulp.watch(srcDirectories.sassPartials + '*.scss', ['sass']);
-
-	gulp.watch(srcDirectories.scripts + '*.js', ['scripts']);
-});
-
-
-
 
 var libs = [
 	'./bower_components/angular/angular.min.js',
@@ -50,20 +34,32 @@ var scripts = [
 	'./src/assets/app/app.js'
 ];
 
+gulp.task('sass', function () {
+	gulp.src(sourceDirectories.sass + '*.scss')
+		.pipe(sass.sync().on('error', sass.logError))
+		.pipe(gulp.dest(distDirectories.stylesheets));
+});
+
+gulp.task('default', ['sass', 'scripts', 'images'], function () {
+	gulp.watch(sourceDirectories.sass + '*.scss', ['sass']);
+	gulp.watch(sourceDirectories.sassPartials + '*.scss', ['sass']);
+	gulp.watch(sourceDirectories.scripts + '*.js', ['scripts']);
+});
+
 gulp.task('libs', function () {
-	return gulp.src(libs)
+	gulp.src(libs)
 		.pipe(concat('libs.js'))
 		.pipe(gulp.dest(distDirectories.scripts));
 });
 
 gulp.task('appScripts', function () {
-	return gulp.src(scripts)
+	gulp.src(scripts)
 		.pipe(concat('app.js'))
 		.pipe(gulp.dest(distDirectories.scripts));
 });
 
 gulp.task('images', function () {
-	gulp.src(srcDirectories.images + "*")
+	gulp.src(sourceDirectories.images + "*")
 		.pipe(gulp.dest(distDirectories.images));
 });
 
