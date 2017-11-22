@@ -13,8 +13,6 @@
         var vm = this;
 
         vm.movie = Movie;
-
-        console.debug('Movie', Movie);
     };
 
     stateConfig.$inject = ['$stateProvider'];

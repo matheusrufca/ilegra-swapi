@@ -7,13 +7,10 @@
         ])
         .config(stateConfig);
 
-
-
     function MainController($rootScope) {
         $scope.title = 'Star Wars WIKI';
         $scope.sections = [];
     };
-
 
     stateConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 

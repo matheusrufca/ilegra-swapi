@@ -7,13 +7,15 @@ var sourceDirectories = {
 	'sass': './src/assets/sass/',
 	'sassPartials': './src/assets/sass/partials/',
 	'scripts': './src/assets/app/',
-	'images': './src/assets/img/'
+	'images': './src/assets/img/',
+	'main': './src/',
 };
 
 var distDirectories = {
 	'stylesheets': './dist/assets/',
 	'scripts': './dist/assets/',
-	'images': './dist/assets/img/'
+	'images': './dist/assets/img/',
+	'main': './dist/',
 };
 
 var libs = [
@@ -41,11 +43,7 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest(distDirectories.stylesheets));
 });
 
-gulp.task('default', ['sass', 'scripts', 'images'], function () {
-	gulp.watch(sourceDirectories.sass + '*.scss', ['sass']);
-	gulp.watch(sourceDirectories.sassPartials + '*.scss', ['sass']);
-	gulp.watch(sourceDirectories.scripts + '*.js', ['scripts']);
-});
+
 
 gulp.task('libs', function () {
 	gulp.src(libs)
@@ -63,5 +61,25 @@ gulp.task('images', function () {
 	gulp.src(sourceDirectories.images + "*")
 		.pipe(gulp.dest(distDirectories.images));
 });
+
+gulp.task('html', function () {
+
+	gulp.src(sourceDirectories.main + 'assets/views/home/*.html')
+		.pipe(gulp.dest(distDirectories.main + 'views/home/'));
+
+	gulp.src(sourceDirectories.main + 'assets/views/detail/*.html')
+		.pipe(gulp.dest(distDirectories.main + 'views/detail/'));
+
+
+	gulp.src(sourceDirectories.main + "*.html")
+		.pipe(gulp.dest(distDirectories.main));
+});
+
+gulp.task('default', ['sass', 'scripts', 'html', 'images'], function () {
+	gulp.watch(sourceDirectories.sass + '*.scss', ['sass']);
+	gulp.watch(sourceDirectories.sassPartials + '*.scss', ['sass']);
+	gulp.watch(sourceDirectories.scripts + '*.js', ['scripts']);
+});
+
 
 gulp.task('scripts', ['libs', 'appScripts']);
