@@ -147,9 +147,3 @@ sftp-config.json
 # Visual Studio Code - https://code.visualstudio.com/
 .settings/
 .vscode/
-
-
-assets/css
-app/assets/css
-
-angular-testing-quick-start
