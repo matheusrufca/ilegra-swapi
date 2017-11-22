@@ -4,31 +4,31 @@
     angular
         .module('myApp.detail', ['libraries', 'app.directives'])
         .config(stateConfig)
-        .controller('HomeController', MovieDetailController);
+        .controller('MovieDetailController', MovieDetailController);
 
 
-    // HomeController.$inject = ['Movies'];
+    // MovieDetailController.$inject = ['Movies'];
 
-    function MovieDetailController(Movies, MoviePosterService) {
+    function MovieDetailController(Movie) {
         var vm = this;
 
-        vm.movies = Movies;
+        vm.movie = Movie;
 
-        MoviePosterService.getPoster(Movies[0].title)
-        console.debug('Movies', Movies)
+        console.debug('Movie', Movie);
     };
 
 
-    stateConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+    stateConfig.$inject = ['$stateProvider'];
 
-    function stateConfig($stateProvider, $urlRouterProvider) {
+    function stateConfig($stateProvider) {
         $stateProvider.state('detail', {
             url: '/detail/:id',
             templateUrl: 'app/detail/detail.tmpl.html',
             controller: 'MovieDetailController as detail',
             resolve: {
-                Movies: function (StarWarsMoviesService, MoviePosterService) {
-                    return StarWarsMoviesService.getMovies();
+                Movie: function (StarWarsMoviesService, $transition$) {
+                    var contentId = $transition$.params().id;
+                    return StarWarsMoviesService.getMovie(contentId);
                 }
             }
         });

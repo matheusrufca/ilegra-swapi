@@ -10,7 +10,21 @@
     function StarWarsMoviesService($q, swapiService) {
         var self = {};
 
-        self.getMovie = angular.noop;
+        self.getMovie = function (id) {
+            var df = $q.defer();
+
+            swapiService.film(id)
+                .then(function (response) {
+                    df.resolve(response);
+                    console.debug('/api/films/' + id, response);
+                })
+                .catch(function (err) {
+                    df.reject(err);
+                    console.warn(err);
+                })
+
+            return df.promise;
+        };
 
         self.getMovies = function () {
             var df = $q.defer();
@@ -27,9 +41,6 @@
 
             return df.promise;
         };
-
-
-
 
         return {
             getMovie: self.getMovie,

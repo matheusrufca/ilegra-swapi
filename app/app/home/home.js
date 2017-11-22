@@ -9,7 +9,7 @@
 
     // HomeController.$inject = ['Movies'];
 
-    function HomeController(Movies, MoviePosterService) {
+    function HomeController(Movies) {
         var vm = this;
 
         vm.movies = Movies;
@@ -24,7 +24,7 @@
             templateUrl: 'app/home/home.tmpl.html',
             controller: 'HomeController as home',
             resolve: {
-                Movies: function (StarWarsMoviesService, MoviePosterService) {
+                Movies: function (StarWarsMoviesService) {
                     return StarWarsMoviesService.getMovies();
                 }
             }
