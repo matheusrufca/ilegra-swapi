@@ -1,7 +1,17 @@
-<div>
-    <pre> {{ detail.movie | json }}</pre>
+<div class="row">
     <movie-info content="detail.movie" />
+    <pre> {{ detail.movie | json }}</pre>
 </div>
 <style>
-    
+    .movie-poster {
+        display: block;
+        width: 100%;
+    }
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+
+    .summary {}
 </style>
