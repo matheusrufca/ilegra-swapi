@@ -1,7 +1,7 @@
 {
-  "name": "angularjs-testing-quick-start",
+  "name": "ilegra-swapi",
   "version": "1.0.0",
-  "description": "Companion code for One Hungry Mind's AngularJS Testing Quick Start",
+  "description": "",
   "main": "karma.conf.js",
   "dependencies": {
     "karma": "^0.12.24",
@@ -17,6 +17,6 @@
     "karma-jasmine": "^0.2.3",
     "serve": "^6.4.1"
   },
-  "author": "Lukas Ruebbelke",
+  "author": "Matheus Rufca",
   "license": "ISC"
 }
