@@ -2,10 +2,10 @@
 	'use strict';
 	var templateUrl;
 
-	templateUrl = 'views/list/tpl-movie-view.html'
+	templateUrl = 'views/home/tpl-movie-view.html'
 
 	angular
-		.module('app.ui.list.directives', [])
+		.module('app.ui.home.directives', [])
 		.directive('movieItemView', movieItemView);
 
 	movieItemView.$inject = ['MoviePosterService'];

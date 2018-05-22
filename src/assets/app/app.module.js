@@ -3,6 +3,7 @@
         .module('app', [
             'libraries',
             'app.ui.home',
+            'app.ui.list',
             'app.ui.detail'
         ])
         .config(stateConfig);

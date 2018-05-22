@@ -68,6 +68,10 @@ gulp.task('html', function () {
 	gulp.src(sourceDirectories.main + 'assets/views/detail/*.html')
 		.pipe(gulp.dest(distDirectories.main + 'views/detail/'));
 
+		
+	gulp.src(sourceDirectories.main + 'assets/views/list/*.html')
+	.pipe(gulp.dest(distDirectories.main + 'views/list/'));
+
 
 	gulp.src(sourceDirectories.main + "*.html")
 		.pipe(gulp.dest(distDirectories.main));
