@@ -29,15 +29,11 @@ var libs = [
 ];
 
 var scripts = [
-	'./src/assets/app/components/swapi-service.module.js',
-	'./src/assets/app/components/movie-poster.module.js',
-	'./src/assets/app/components/slick-carousel.module.js',
-	'./src/assets/app/libraries.module.js',
-	'./src/assets/views/home/directives.js',
-	'./src/assets/views/home/controllers.js',
-	'./src/assets/views/detail/directives.js',
-	'./src/assets/views/detail/controllers.js',
-	'./src/assets/app/app.js'
+	'./src/assets/app/components/*.js',
+	'./src/assets/app/app.libraries.module.js',
+	'./src/assets/views/home/*.js',
+	'./src/assets/views/detail/*.js',
+	'./src/assets/app/app.module.js'
 ];
 
 gulp.task('sass', function () {
@@ -66,7 +62,6 @@ gulp.task('images', function () {
 });
 
 gulp.task('html', function () {
-
 	gulp.src(sourceDirectories.main + 'assets/views/home/*.html')
 		.pipe(gulp.dest(distDirectories.main + 'views/home/'));
 
@@ -79,9 +74,10 @@ gulp.task('html', function () {
 });
 
 gulp.task('default', ['sass', 'scripts', 'html', 'images'], function () {
-	gulp.watch(sourceDirectories.sass + '*.scss', ['sass']);
-	gulp.watch(sourceDirectories.sassPartials + '*.scss', ['sass']);
-	gulp.watch(sourceDirectories.scripts + '**.js', ['scripts']);
+	gulp.watch(sourceDirectories.sass + '**/*.scss', ['sass']);
+	gulp.watch(sourceDirectories.sassPartials + '**/*.scss', ['sass']);
+	gulp.watch(sourceDirectories.scripts + '**/*.js', ['scripts']);
+	gulp.watch(sourceDirectories.main + 'views/**/*.*', ['html', 'scripts']);
 });
 
 
