@@ -5,22 +5,25 @@
         </div>
     </aside>
     <main>
-        <div class="panel">
-            <h2>Movies</h2>
-            <div carousel settings="home.sliderSettings">
-                <div class="items-container" style="width: 100%;">
-                    <div ng-repeat="item in home.movies">
-                        <div ng-bind="item.title" class="text-center"></div>
-                        <!-- <movie-item-view content="item" /> -->
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="row hidden">
-            <div ng-repeat="x in home.movies | orderBy: 'release_date'" class="movie-view-wrapper col-xs-12 col-sm-6 col-md-4 text-center">
-                <movie-item-view content="x" />
+        <div class="panel">
+
+            <h2>Movies</h2>
+            <div class="row movies-container">
+                <div ng-repeat="x in home.movies | orderBy: 'release_date'" class="movie-view-wrapper col-xs-6 col-sm-4 col-md-3 text-center">
+                    <movie-item-view content="x" />
+                </div>
             </div>
         </div>
     </main>
 </div>
+
+
+<!-- 
+<div carousel settings="home.sliderSettings">
+    <div class="items-container" style="width: 100%;">
+        <div ng-repeat="item in home.movies">
+            <div ng-bind="item.title" class="text-center"></div>
+        </div>
+    </div>
+</div> -->

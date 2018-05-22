@@ -1,3 +1,4 @@
+$sidebar-width: 30%;
 html,
 body {
 	width: 100%;
@@ -6,6 +7,10 @@ body {
 
 body {
 	// font-size: 10px;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
 }
 
 h1,
@@ -29,6 +34,37 @@ footer {
 	width: 100%;
 }
 
+main.page-content {
+	position: relative;
+	width: 100%;
+	// height: 100%;
+	@extend .grow;
+}
+
 img {
 	display: block;
+}
+
+.view-container {
+	position: relative;
+	height: 100%;
+}
+
+.view-page {
+	position: relative;
+	height: 100%;
+	aside {
+		position: relative;
+		width: $sidebar-width;
+		height: 100%;
+		.sidebar-menu {
+			padding: 30px;
+		}
+	}
+	main {
+		position: relative;
+		width: auto;
+		height: 100%;
+		overflow: auto;
+	}
 }
