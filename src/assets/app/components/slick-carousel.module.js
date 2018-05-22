@@ -4,9 +4,9 @@
 	angular.module('mr.slick-carousel', [])
 		.constant('slickDefaultSettings', {
 			infinite: true,
-			// centerMode: true,
 			dots: true,
-			// slidesPerRow: 4
+			slidesToShow: 3
+
 		})
 		.directive('carousel', slickDirective);
 
@@ -29,17 +29,18 @@
 				items: '=',
 				settings: '='
 			}
-		}
+		};
 
 		function linkFn(scope, element, attrs) {
-			var settings = angular.extend(scope.settings || {}, slickDefaultSettings),
-				$carousel = element.find('.carousel').children();
+			var $carousel, settings = angular.extend(slickDefaultSettings, scope.settings || {});
 
 			$timeout(function () {
+				$carousel = element.find('.items-container');
 				$carousel.slick(settings);
 			});
 
 			console.debug('slickDirective', scope, element, attrs);
+			console.debug('slickDirective.settings', settings);
 		}
 	}
 })(window.angular, window.jQuery);

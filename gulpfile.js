@@ -9,6 +9,7 @@ var sourceDirectories = {
 	'scripts': './src/assets/app/',
 	'images': './src/assets/img/',
 	'main': './src/',
+	'views': './src/assets/views/'
 };
 
 var distDirectories = {
@@ -31,8 +32,7 @@ var libs = [
 var scripts = [
 	'./src/assets/app/components/*.js',
 	'./src/assets/app/app.libraries.module.js',
-	'./src/assets/views/home/*.js',
-	'./src/assets/views/detail/*.js',
+	'./src/assets/views/**/*.js',
 	'./src/assets/app/app.module.js'
 ];
 
@@ -77,7 +77,8 @@ gulp.task('default', ['sass', 'scripts', 'html', 'images'], function () {
 	gulp.watch(sourceDirectories.sass + '**/*.scss', ['sass']);
 	gulp.watch(sourceDirectories.sassPartials + '**/*.scss', ['sass']);
 	gulp.watch(sourceDirectories.scripts + '**/*.js', ['scripts']);
-	gulp.watch(sourceDirectories.main + 'views/**/*.*', ['html', 'scripts']);
+	gulp.watch(sourceDirectories.views + '**/*.js', ['scripts']);
+	gulp.watch(sourceDirectories.views + '**/*.html', ['html']);
 });
 
 

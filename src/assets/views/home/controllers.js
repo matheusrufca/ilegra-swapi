@@ -3,7 +3,7 @@
 
     angular
         .module('app.ui.home', ['libraries', 'app.ui.home.directives'])
-    .config(stateConfig)
+        .config(stateConfig)
         .controller('HomeController', HomeController);
 
 
@@ -12,6 +12,11 @@
     function HomeController(Movies) {
         var vm = this;
 
+        vm.sliderSettings = {
+			infinite: false,
+            slidesToShow: 5,
+            centerMode: false
+        };
         vm.movies = Movies;
     };
 
