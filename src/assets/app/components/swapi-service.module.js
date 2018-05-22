@@ -3,14 +3,15 @@
 
     angular
         .module('mr.swapi', ['xyz.angular.swapi'])
-        .factory('StarWarsMoviesService', StarWarsMoviesService);
+        .factory('StarWarsMoviesService', StarWarsMoviesService)
+        .factory('StarWarsApiService', StarWarsApiService);
 
     StarWarsMoviesService.$inject = ['$q', 'swapiService'];
 
     function StarWarsMoviesService($q, swapiService) {
         var self = {};
 
-        self.getMovie = function (id) {
+        function getMovie(id) {
             var df = $q.defer();
 
             swapiService.film(id)
@@ -26,7 +27,7 @@
             return df.promise;
         };
 
-        self.getMovies = function () {
+        function getMovies() {
             var df = $q.defer();
 
             swapiService.films()
@@ -43,8 +44,49 @@
         };
 
         return {
-            getMovie: self.getMovie,
-            getMovies: self.getMovies
+            getMovie: getMovie,
+            getMovies: getMovies
         };
-    };
+    }
+
+
+    StarWarsApiService.$inject = ['$q', 'swapiService'];
+
+    function StarWarsApiService($q, swapiService) {
+        var self = {};
+
+        return {
+            getResource: getResource
+        };
+
+        function getResource(resource, params) {
+            var df = $q.defer();
+
+            try {
+                if (!angular.isFunction(swapiService[resource]))
+                    throw 'Invalid resource';
+
+                swapiService[resource](params)
+                    .then(handleSuccess)
+                    .catch(handleError);
+
+            } catch (err) {
+                df.reject(err);
+            }
+            return df.promise;
+
+            function handleSuccess(response) {
+                df.resolve(response);
+                console.info('StarWarsApiService.getResource()', resource, params, response);
+            }
+
+            function handleError(reason) {
+                df.reject(reason);
+                console.warn('StarWarsApiService.getResource()', resource, params, reaon);
+            }
+        }
+    }
+
+
+
 })(window.angular);
