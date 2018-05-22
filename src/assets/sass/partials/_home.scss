@@ -1,3 +1,28 @@
+$sidebar-width: 30%;
+.view-page {
+	aside {
+		position: relative;
+		width: $sidebar-width;
+		.sidebar-menu {
+			padding: 30px;
+		}
+	}
+	main {
+		position: relative;
+		width: auto;
+		overflow: auto;
+	}
+}
+
+.home-view {
+	@extend .flexbox;
+	aside {}
+	main {
+		padding: 30px;
+		@extend .grow;
+	}
+}
+
 .movie-view-wrapper {
 	margin-bottom: 20px;
 }
