@@ -3,6 +3,6 @@
  */
 
  @import "modules/all";
- @import 'global';
- @import 'home.scss';
- @import 'detail.scss';
+ @import 'shared';
+ @import 'home';
+ @import 'detail';

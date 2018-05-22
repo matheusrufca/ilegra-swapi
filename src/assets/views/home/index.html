@@ -5,10 +5,11 @@
         </div>
     </aside>
     <main class="view-content">
+        
+            <h2 class="page-title">Star Wars Movies <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></h2>
         <div class="panel">
-            <h2>Movies</h2>
             <div class="row movies-container">
-                <div ng-repeat="x in home.movies | orderBy: 'release_date'" class="movie-view-wrapper col-xs-6 col-sm-4 col-md-3 text-center">
+                <div ng-repeat="x in home.movies | orderBy: 'release_date'" class="movie-view-wrapper col-xs-6 col-sm-3 col-md-3 col-lg-2 text-center">
                     <movie-item-view content="x" />
                 </div>
             </div>

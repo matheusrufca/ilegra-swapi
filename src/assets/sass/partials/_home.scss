@@ -1,11 +1,16 @@
-
-
 .home-view {
 	@extend .flexbox;
 	aside {}
 	main {
 		padding: 30px;
 		@extend .grow;
+
+		.movies-container {
+			// @include make-row;
+			.movie-view-wrapper {
+				// @include make-md-column(2.4);
+			}
+		}
 	}
 }
 
