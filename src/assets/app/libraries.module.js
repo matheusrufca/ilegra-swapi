@@ -1,4 +1,3 @@
-
 (function (angular) {
     'use strict';
 
@@ -6,7 +5,7 @@
         'ngAnimate',
         'ui.router',
         'mr.themoviedb',
+        'mr.slick-carousel',
         'mr.swapi',
     ]);
 })(window.angular);
-

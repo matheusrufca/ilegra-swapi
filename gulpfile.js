@@ -19,6 +19,8 @@ var distDirectories = {
 };
 
 var libs = [
+	'./bower_components/jquery/dist/jquery.min.js',
+	'./bower_components/slick-carousel/slick/slick.min.js',
 	'./bower_components/angular/angular.min.js',
 	'./bower_components/angular-animate/angular-animate.min.js',
 	'./bower_components/angular-mocks/angular-mocks.js',
@@ -27,8 +29,9 @@ var libs = [
 ];
 
 var scripts = [
-	'./src/assets/app/swapi-service.module.js',
-	'./src/assets/app/movie-poster.module.js',
+	'./src/assets/app/components/swapi-service.module.js',
+	'./src/assets/app/components/movie-poster.module.js',
+	'./src/assets/app/components/slick-carousel.module.js',
 	'./src/assets/app/libraries.module.js',
 	'./src/assets/views/home/directives.js',
 	'./src/assets/views/home/controllers.js',
@@ -78,7 +81,7 @@ gulp.task('html', function () {
 gulp.task('default', ['sass', 'scripts', 'html', 'images'], function () {
 	gulp.watch(sourceDirectories.sass + '*.scss', ['sass']);
 	gulp.watch(sourceDirectories.sassPartials + '*.scss', ['sass']);
-	gulp.watch(sourceDirectories.scripts + '*.js', ['scripts']);
+	gulp.watch(sourceDirectories.scripts + '**.js', ['scripts']);
 });
 
 
