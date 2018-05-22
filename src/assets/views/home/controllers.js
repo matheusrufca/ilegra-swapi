@@ -3,7 +3,7 @@
 
     angular
         .module('app.ui.home', ['libraries', 'app.ui.home.directives'])
-        .config(stateConfig)
+    .config(stateConfig)
         .controller('HomeController', HomeController);
 
 

@@ -1,11 +1,75 @@
 <div>
     <div class="row">
+        <div class="col-md-12">
+            <div class="mr-carousel">
+                <div carousel>
+                    <!-- ngRepeat: item in home.movies -->
+                    <div>
+                        <div>
+                            <img src="https://image.tmdb.org/t/p/w300//btTdmkgIvOi0FFip1sPuZI2oQG6.jpg" ng-src="https://image.tmdb.org/t/p/w300//btTdmkgIvOi0FFip1sPuZI2oQG6.jpg">
+                            <div>A New Hope</div>
+                        </div>
+                    </div>
+                    <!-- end ngRepeat: item in home.movies -->
+                    <div>
+                        <div>
+                            <img src="https://image.tmdb.org/t/p/w300//2vcNFtrZXNwIcBgH5e2xXCmVR8t.jpg">
+                            <div>Attack of the Clones</div>
+                        </div>
+                    </div>
+                    <!-- end ngRepeat: item in home.movies -->
+                    <div>
+                        <div>
+                            <img src="https://image.tmdb.org/t/p/w300//n8V09dDc02KsSN6Q4hC2BX6hN8X.jpg">
+                            <div>The Phantom Menace</div>
+                        </div>
+                    </div>
+                    <!-- end ngRepeat: item in home.movies -->
+                    <div>
+                        <div>
+                            <img src="https://image.tmdb.org/t/p/w300//tgr5Pdy7ehZYBqBkN2K7Q02xgOb.jpg">
+                            <div>Revenge of the Sith</div>
+                        </div>
+                    </div>
+                    <!-- end ngRepeat: item in home.movies -->
+                    <div>
+                        <div>
+                            <img src="https://image.tmdb.org/t/p/w300//jx5p0aHlbPXqe3AH9G15NvmWaqQ.jpg">
+                            <div>Return of the Jedi</div>
+                        </div>
+                    </div>
+                    <!-- end ngRepeat: item in home.movies -->
+                    <div>
+                        <div>
+                            <img src="https://image.tmdb.org/t/p/w300//6u1fYtxG5eqjhtCPDx04pJphQRW.jpg">
+                            <div>The Empire Strikes Back</div>
+                        </div>
+                    </div>
+                    <!-- end ngRepeat: item in home.movies -->
+                    <div>
+                        <div>
+                            <img src="https://image.tmdb.org/t/p/w300//weUSwMdQIa3NaXVzwUoIIcAi85d.jpg">
+                            <div>The Force Awakens</div>
+                        </div>
+                    </div>
+                    <!-- end ngRepeat: item in home.movies -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div carousel items="home.movies" settings="home.carouselSettings">
+            <div ng-repeat="item in home.movies">
+                <movie-item-view content="item" />
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
         <div ng-repeat="x in home.movies | orderBy: 'release_date'" class="movie-view-wrapper col-xs-12 col-sm-6 col-md-4 text-center">
             <movie-item-view content="x" />
         </div>
     </div>
 
-    <div class="row">
-        <carousel items="home.movies" settings="home.carouselSettings" />
-    </div>
+
 </div>
