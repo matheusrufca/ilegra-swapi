@@ -1,10 +1,9 @@
 {
-  "name": "angular-mock",
+  "name": "ilegra-swapi",
   "authors": [
     "Matheus Rufca <matheus.rufca@gmail.com>"
   ],
-  "description": "",
-  "main": "",
+  "description": "Star Wars wiki",
   "license": "MIT",
   "homepage": "",
   "private": true,

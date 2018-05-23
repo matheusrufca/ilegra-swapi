@@ -4,9 +4,6 @@
   "description": "Star Wars wiki",
   "author": "Matheus Rufca <matheus.rufca@gmail.com>",
   "homepage": "https://github.com/matheusrufca/ilegra-swapi",
-  "files": [
-
-  ],
   "main": "dist/",
   "scripts": {
     "start": "http-server ./dist"
@@ -26,5 +23,5 @@
     "type": "git",
     "url": "https://github.com/matheusrufca/ilegra-swapi.git"
   },
-  "license": "ISC"
+  "license": "MIT"
 }
