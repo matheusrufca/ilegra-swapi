@@ -12,7 +12,7 @@
 
         angular.extend(view, {
             resourceType: viewName,
-            items: Items.results
+            items: Items
         });
 
         console.debug('StarshipsController', $scope, view, viewName);
@@ -32,10 +32,12 @@
             pagination: _getPagination
         });
 
-
-
         console.debug('ListController', view);
 
+
+        function nextPage() {}
+
+        function previousPage() {}
 
 
         function _getPagination() {

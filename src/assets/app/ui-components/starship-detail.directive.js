@@ -7,26 +7,26 @@
 		.directive('starshipDetail', StarshipDetailDirective);
 
 	function StarshipDetailDirective($timeout) {
-		var htmlTemplate;
+		var headingTemplate, descriptionTemplate, htmlTemplate;
 
-		htmlTemplate = [
-			'<div class="list-item-detail starhip-detail">',
-			'<h3 class="list-group-item-heading" >',
-			'<span ng-bind="starship.name" /> <small ng-bind="starship.model" />',
+
+	
+
+		headingTemplate = [
+			'<h3 class="panel-heading">',
+			'<span ng-bind="starship.name"></span> <small ng-bind="starship.model"></small>',
 			'</h3>',
-			// '<p class="list-group-item-text">',
-			'<div>',
+		].join('');
+
+		descriptionTemplate = [
 			'<div class="row"><div class="col-md-6">',
 			'<dl class="dl-horizontal">',
 			'<dt ng-bind="getPropertyName(\'starship_class\')" class="text-capitalize" />',
 			'<dd ng-bind="starship.starship_class" />',
-
 			'<dt ng-bind="getPropertyName(\'manufacturer\')" class="text-capitalize" />',
 			'<dd ng-bind="starship.manufacturer" />',
-
 			'<dt ng-bind="getPropertyName(\'cost_in_credits\')" class="text-capitalize" />',
 			'<dd ng-bind="starship.cost_in_credits | currency" />',
-
 			'<dt ng-bind="getPropertyName(\'length\')" class="text-capitalize" />',
 			'<dd ng-bind="starship.length" />',
 			'</dl>',
@@ -34,20 +34,29 @@
 			'<div class="col-md-6">',
 			'<dl class="dl-horizontal">',
 			'<dt ng-bind="getPropertyName(\'crew\')" class="text-capitalize" />',
-
 			'<dd ng-bind="starship.crew" />',
 			'<dt ng-bind="getPropertyName(\'passengers\')" class="text-capitalize" />',
 			'<dd ng-bind="starship.passengers" />',
-
 			'<dt ng-bind="getPropertyName(\'max_atmosphering_speed\')" class="text-capitalize" />',
 			'<dd ng-bind="starship.max_atmosphering_speed" />',
-
 			'<dt ng-bind="getPropertyName(\'hyperdrive_rating\')" class="text-capitalize" />',
 			'<dd ng-bind="starship.hyperdrive_rating" />',
-
 			'</dl>',
-			'</div></div>',
 			'</div>',
+			'</div>',
+		].join('')
+
+
+
+		htmlTemplate = [
+			'<uib-accordion>',
+			'<div uib-accordion-group class="panel-default list-item-detail starhip-detail">',
+			'<uib-accordion><uib-accordion-group>',
+			'<uib-accordion-heading>',
+			headingTemplate,
+			'</uib-accordion-heading>',
+			descriptionTemplate,
+			'</uib-accordion>',
 			'</div>'
 		].join('');
 

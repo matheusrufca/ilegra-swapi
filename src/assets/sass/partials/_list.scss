@@ -5,8 +5,18 @@
 		padding: 30px;
 		@extend .grow;
 		ul.list-group {
-			li.list-group-item .list-group-item-heading {
-				margin-bottom: 20px;
+			li.list-group-item {
+				.panel-title a:hover,
+				.panel-title a:focus,
+					{
+					text-decoration: none;
+					.panel-heading span {
+						text-decoration: underline;
+					}
+					.panel-heading small {
+						text-decoration: none;
+					}
+				}
 			}
 		}
 	}
