@@ -21,15 +21,20 @@
 
         <div ng-controller="ListController as list" class="list-wrapper">
             <div>
-                <ul uib-pagination total-items="list.items.length" ng-model="list.page" ng-change="list.handlePageChange()"></ul>
+                <ul uib-pagination total-items="list.totalItems" ng-model="list.page" ng-change="list.handlePageChange(list.page)" ng-disabled="list.loading"></ul>
             </div>
-            <ul class="list-group">
+            <div ng-if="list.loading">
+                <!-- TODO: add loader -->
+                Loading...
+            </div>
+
+            <ul class="list-group" ng-if="!list.loading">
                 <li class="list-group-item" ng-repeat="item in list.items track by $index">
                     <starship-detail starship="item" />
                 </li>
             </ul>
             <div>
-                <ul uib-pagination total-items="list.items.length" ng-model="list.page" ng-change="list.handlePageChange()"></ul>
+                <ul uib-pagination total-items="list.totalItems" ng-model="list.page" ng-change="list.handlePageChange" ng-disabled="list.loading"></ul>
             </div>
 
 

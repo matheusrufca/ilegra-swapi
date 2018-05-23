@@ -60,7 +60,37 @@
             getResource: getResource
         };
 
-        function getResource(resource, params) {
+        function getResource(resource, page) {
+            var df = $q.defer();
+
+            try {
+                if (!angular.isFunction(swapiService[resource]))
+                    throw 'Invalid resource';
+
+                swapiService[resource](page)
+                    .then(handleSuccess)
+                    .catch(handleError);
+
+            } catch (err) {
+                df.reject(err);
+            }
+            return df.promise;
+
+            function handleSuccess(response) {
+                df.resolve(response);
+                console.info('StarWarsApiService.getResource()', resource, page, response);
+            }
+
+            function handleError(reason) {
+                df.reject(reason);
+                console.warn('StarWarsApiService.getResource()', resource, page, reaon);
+            }
+        }
+
+
+
+
+        function getSpecificResource(resource, params) {
             var df = $q.defer();
 
             try {

@@ -62,7 +62,7 @@
 
 		return {
 			template: htmlTemplate,
-			link: linkFn,
+			//link: linkFn,
 			controller: ['$scope', directiveController],
 			retrict: 'E',
 			scope: {
