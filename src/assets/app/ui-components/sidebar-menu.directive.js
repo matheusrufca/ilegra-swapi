@@ -11,8 +11,8 @@
 
 		htmlTemplate = [
 			'<div class="sidebar-menu list-group">',
-			'<a  ng-repeat="item in items" ui-href="{{item.resource}}" ng-bind="item.title"',
-			'href="" class="list-group-item list-group-item-action text-capitalize"></a>',
+			'<a  ng-repeat="item in items" href="#!{{item.url}}" ng-bind="item.title"',
+			'class="list-group-item list-group-item-action text-capitalize"></a>',
 			'</div>'
 		].join('');
 
