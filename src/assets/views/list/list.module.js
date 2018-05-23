@@ -30,7 +30,8 @@
 			controller: 'ListController',
 			controllerAs: 'list',
 			resolve: {
-				Items: getResource('planets')
+				Items: getResource('starships')
+				// Items: getResource('planets')
 				// Movies: getResource('films'),
 				// Starships: getResource('starships'),
 				// Vehicles: getResource('vehicles'),

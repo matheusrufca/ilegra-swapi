@@ -6,22 +6,24 @@
     </aside>
     <main class="view-content">
         <!-- BRADCUMB -->
-        <ol class="breadcrumb">
-            <li>
-                <!-- TODO: use home icon -->
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#">List</a>
-            </li>
-            <li>
-                <a href="#">ListType</a>
-            </li>
-        </ol>
+        <div>
+            <ol class="breadcrumb">
+                <li>
+                    <!-- TODO: use home icon -->
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">List</a>
+                </li>
+                <li>
+                    <a href="#">ListType</a>
+                </li>
+            </ol>
+        </div>
 
         <div class="list-wrapper">
-            <ul>
-                <li ng-repeat="item in list.items track by $index">
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in list.items track by $index">
                     <starship-detail starship="item" />
                 </li>
             </ul>

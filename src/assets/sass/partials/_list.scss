@@ -4,5 +4,10 @@
 	main {
 		padding: 30px;
 		@extend .grow;
+		ul.list-group {
+			li.list-group-item .list-group-item-heading {
+				margin-bottom: 20px;
+			}
+		}
 	}
 }
