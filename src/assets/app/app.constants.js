@@ -4,9 +4,9 @@
 
 
     APP_SIDEBAR_ITEMS = [{
-        title: 'Movies',
+        title: 'Home',
         resource: 'films',
-        url: '/movies'
+        url: '/home'
     }, {
         title: 'Starships',
         resource: 'starships',

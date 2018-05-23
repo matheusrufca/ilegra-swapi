@@ -2,10 +2,10 @@
 	'use strict';
 	var templateUrl;
 
-	templateUrl = 'views/detail/movie-info.tpl.html';
+	templateUrl = 'views/movie/movie-info.tpl.html';
 
 	angular
-		.module('app.ui.detail.directives')
+		.module('app.ui.movie.directives')
 		.directive('movieInfo', movieInfoDirective);
 
 	movieInfoDirective.$inject = ['$window', '$timeout', '$compile', '$rootScope', 'MoviePosterService'];
@@ -26,6 +26,7 @@
 		return {
 			restrict: 'E',
 			link: linkFn,
+			controller: ['$scope', directiveController],
 			templateUrl: templateUrl,
 			scope: {
 				content: '='
@@ -35,5 +36,20 @@
 		function getContentId(contentUrl) {
 			return (contentUrl || '').split('/').splice(-2).join('');
 		};
+
+		function directiveController($scope) {
+			$scope.getPropertyName = getPropertyName;
+
+
+			function getPropertyName(property) {
+				var output;
+				try {
+					output = (property || '').split('_').join(' ');
+				} catch (err) {
+					console.warn('movieInfoDirective.getPropertyName()', err);
+				}
+				return output;
+			}
+		}
 	};
 })(window.angular);

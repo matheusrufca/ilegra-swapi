@@ -70,7 +70,10 @@ main.page-content {
 		width: auto;
 		height: 100%;
 		overflow: auto;
+		padding: 30px;
+		@extend .grow;
 	}
+	@extend .flexbox;
 }
 
 .sidebar-menu {

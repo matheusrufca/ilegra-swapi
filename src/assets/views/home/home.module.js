@@ -28,11 +28,7 @@
             controller: 'HomeController',
             controllerAs:'home',
             resolve: {
-                Movies: getResource('films'),
-                Starships: getResource('starships'),
-                Vehicles: getResource('vehicles'),
-                Species: getResource('species'),
-                Planets: getResource('planets')
+                Movies: getResource('films')
             }
         });
 

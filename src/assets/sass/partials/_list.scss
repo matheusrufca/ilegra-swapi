@@ -1,24 +1,18 @@
 .list-view {
-	@extend .flexbox;
-	aside {}
-	main {
-		padding: 30px;
-		@extend .grow;
-		ul.list-group {
-			li.list-group-item {
-				.panel-title a:hover,
-				.panel-title a:focus {
+	ul.list-group {
+		li.list-group-item {
+			.panel-title a:hover,
+			.panel-title a:focus {
+				text-decoration: none;
+				.title span {
+					text-decoration: underline;
+				}
+				.title small {
 					text-decoration: none;
-					.title span {
-						text-decoration: underline;
-					}
-					.title small {
-						text-decoration: none;
-					}
 				}
-				.panel-group {
-					margin-bottom: 0;
-				}
+			}
+			.panel-group {
+				margin-bottom: 0;
 			}
 		}
 	}

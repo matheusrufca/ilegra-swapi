@@ -57,7 +57,8 @@
         var self = {};
 
         return {
-            getResource: getResource
+            getResource: getResource,
+            getSpecificResource: getSpecificResource
         };
 
         function getResource(resource, page) {
@@ -87,17 +88,14 @@
             }
         }
 
-
-
-
-        function getSpecificResource(resource, params) {
+        function getSpecificResource(resource, id) {
             var df = $q.defer();
 
             try {
                 if (!angular.isFunction(swapiService[resource]))
                     throw 'Invalid resource';
 
-                swapiService[resource](params)
+                swapiService[resource](id)
                     .then(handleSuccess)
                     .catch(handleError);
 
@@ -108,16 +106,13 @@
 
             function handleSuccess(response) {
                 df.resolve(response);
-                console.info('StarWarsApiService.getResource()', resource, params, response);
+                console.info('StarWarsApiService.getResource()', resource, id, response);
             }
 
             function handleError(reason) {
                 df.reject(reason);
-                console.warn('StarWarsApiService.getResource()', resource, params, reaon);
+                console.warn('StarWarsApiService.getResource()', resource, id, reaon);
             }
         }
     }
-
-
-
 })(window.angular);

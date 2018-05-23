@@ -1,11 +1,6 @@
-.detail-view {
-	@extend .row;
+.movie-view {
 	.movie-poster {
 		display: block;
 		width: 100%;
 	}
-	.title {
-		margin-bottom: 20px;
-	}
-	.summary {}
 }

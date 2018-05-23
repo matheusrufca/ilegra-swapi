@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.ui.detail.controllers')
+        .module('app.ui.movie.controllers')
         .controller('MovieDetailController', MovieDetailController);
 
 

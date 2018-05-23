@@ -12,7 +12,7 @@
         'app.ui.components',
         'app.ui.home',
         'app.ui.list',
-        'app.ui.detail'
+        'app.ui.movie'
     ]);
 
     angular.module('app', [

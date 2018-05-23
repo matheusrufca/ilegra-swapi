@@ -2,10 +2,8 @@
  *	Imports all modules
  */
 
-$icon-font-path: './bower_components/bootstrap-sass/assets/fonts/bootstrap/'; //TODO: need to document this line to bootrap fonts work 
+$icon-font-path: '/assets/fonts/bootstrap/';; //TODO: need to document this line to bootrap fonts work 
 @import './bower_components/bootswatch/slate/_variables.scss';
 @import './bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 @import './bower_components/bootswatch/slate/_bootswatch.scss';
-@import './bower_components/slick-carousel/slick/slick.scss';
-@import './bower_components/slick-carousel/slick/slick-theme.scss';
 @import 'scaffold';
