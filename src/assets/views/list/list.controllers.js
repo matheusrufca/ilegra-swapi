@@ -27,9 +27,7 @@
 
         angular.extend(view, {
             page: 1,
-            totalPages: _getTotalPages(viewParent.items.count),
-            items: viewParent.items.results,
-            pagination: _getPagination
+            items: viewParent.items.results
         });
 
         console.debug('ListController', view);
@@ -40,27 +38,6 @@
         function previousPage() {}
 
 
-        function _getPagination() {
-            var pagination;;
-            if (angular.isArray(self.pagination))
-                pagination = self.pagination;
-            else
-                pagination = new Array(view.totalPages);
-
-            return pagination;
-        }
-
-        function _getTotalPages(itemsLength) {
-            var totalPages;
-            try {
-                totalPages = itemsLength / 10;
-                totalPages = (totalPages > parseInt(totalPages)) ? parseInt(totalPages + 1) : parseInt(totalPages);
-            } catch (err) {
-                console.warn('ListController.getTotalPages()', itemsLength, err);
-            }
-
-
-            return totalPages || 1;
-        }
+        function handlePageChange() {}
     }
 })(window.angular);
