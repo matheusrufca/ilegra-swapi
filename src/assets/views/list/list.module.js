@@ -21,15 +21,13 @@
 			url: '/list',
 			templateUrl: 'views/list/index.html',
 			controller: 'ListController as list',
+			controllerAs: 'list',
 			resolve: {
-				SidebarItens: ['listSidebarItens', function (listSidebarItens) {
-					return listSidebarItens;
-				}],
+				Items: getResource('planets')
 				// Movies: getResource('films'),
 				// Starships: getResource('starships'),
 				// Vehicles: getResource('vehicles'),
 				// Species: getResource('species'),
-				Items: getResource('planets')
 			}
 		});
 

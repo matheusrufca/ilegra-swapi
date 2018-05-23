@@ -7,7 +7,7 @@
 
     // HomeController.$inject = ['Movies'];
 
-    function HomeController(SidebarItens, Movies, Starships, Vehicles, Species, Planets) {
+    function HomeController(APP_SIDEBAR_ITEMS, Movies, Starships, Vehicles, Species, Planets) {
         var vm = this;
 
         angular.extend(vm, {
@@ -16,7 +16,7 @@
                 slidesToShow: 5,
                 centerMode: false
             },
-            sidebar: SidebarItens || [],
+            sidebar: APP_SIDEBAR_ITEMS || [],
             movies: Movies.results,
             starships: Starships.results,
             vehicles: Vehicles.results,

@@ -8,12 +8,12 @@
 
     // ListController.$inject = ['Movies'];
 
-    function ListController(SidebarItens, Items) {
+    function ListController(APP_SIDEBAR_ITEMS, Items) {
         var self = {},
             vm = this;
 
         angular.extend(vm, {
-            sidebar: SidebarItens || [],
+            sidebar: APP_SIDEBAR_ITEMS || [],
             page: 1,
             totalPages: _getTotalPages(Items.count),
             items: Items.results,

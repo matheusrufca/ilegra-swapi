@@ -32,8 +32,10 @@ var libs = [
 var scripts = [
 	'./src/assets/app/libraries.module.js',
 	'./src/assets/app/components/*.js',
-	'./src/assets/views/**/*.js',
-	'./src/assets/app/app.*.js'
+	'./src/assets/app/app.module.js',
+	'./src/assets/app/app.*.js',
+	'./src/assets/views/**/*.module.js',
+	'./src/assets/views/**/*.js'	
 ];
 
 gulp.task('sass', function () {

@@ -9,6 +9,7 @@
 
     angular.module('app.ui.home', [
             'libraries',
+            'app.constants',
             'app.ui.home.services',
             'app.ui.home.directives',
             'app.ui.home.controllers'
@@ -24,11 +25,9 @@
         $stateProvider.state('home', {
             url: '/home',
             templateUrl: 'views/home/index.html',
-            controller: 'HomeController as home',
+            controller: 'HomeController',
+            controllerAs:'home',
             resolve: {
-                SidebarItens: ['homeSidebarItens', function (homeSidebarItens) {
-                    return homeSidebarItens;
-                }],
                 Movies: getResource('films'),
                 Starships: getResource('starships'),
                 Vehicles: getResource('vehicles'),
