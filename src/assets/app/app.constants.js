@@ -23,6 +23,10 @@
         title: 'Planets',
         resource: 'planets',
         url: '/planets'
+    }, {
+        title: 'People',
+        resource: 'people',
+        url: '/people'
     }];
 
 
