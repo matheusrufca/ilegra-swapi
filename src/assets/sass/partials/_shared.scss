@@ -1,4 +1,4 @@
-$sidebar-width: 30%;
+$sidebar-width: 20%;
 html,
 body {
 	width: 100%;
@@ -62,7 +62,11 @@ main.page-content {
 		width: $sidebar-width;
 		height: 100%;
 		.sidebar-menu {
+			font-size: 2.5rem;
 			padding: 30px;
+			.list-group-item {
+				padding: 20px;
+			}
 		}
 	}
 	main {

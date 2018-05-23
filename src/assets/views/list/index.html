@@ -16,6 +16,12 @@
             </ol>
         </div>
 
+
+        <!-- PAGE TITLE -->
+        <div class="page-header">
+            <h2 ng-bind="view.resourceType" class="text-capitalize"></h2>
+        </div>
+
         <div ng-controller="ListController as list" class="list-wrapper">
             <div>
                 <ul uib-pagination total-items="list.totalItems" ng-model="list.page" ng-change="list.handlePageChange(list.page)" ng-disabled="list.loading"></ul>
@@ -35,7 +41,7 @@
                 <ul uib-pagination total-items="list.totalItems" ng-model="list.page" ng-change="list.handlePageChange" ng-disabled="list.loading"></ul>
             </div>
 
-
+            <!-- TODO: move list to directive -->
             <!-- LIST PAGINATION -->
             <nav aria-label="Page navigation">
                 <ul class="pagination hidden">
