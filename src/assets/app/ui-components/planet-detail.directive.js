@@ -1,6 +1,8 @@
 (function (angular) {
 	'use strict';
 	
+	// TODO: use component instead directive
+	
 	angular
 		.module('app.ui.components')
 		.directive('planetDetail', PlanetDetailDirective);
@@ -10,7 +12,7 @@
 	
 
 		headingTemplate = [
-			'<h3 ng-bind="model.name" class="panel-heading" />',
+			'<h3 ng-bind="model.name" class="title" />',
 		].join('');
 
 		descriptionTemplate = [

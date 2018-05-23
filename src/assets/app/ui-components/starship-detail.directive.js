@@ -13,7 +13,7 @@
 	
 
 		headingTemplate = [
-			'<h3 class="panel-heading">',
+			'<h3 class="title">',
 			'<span ng-bind="model.name"></span> <small ng-bind="model.model"></small>',
 			'</h3>',
 		].join('');

@@ -7,13 +7,12 @@
 		ul.list-group {
 			li.list-group-item {
 				.panel-title a:hover,
-				.panel-title a:focus,
-					{
+				.panel-title a:focus {
 					text-decoration: none;
-					.panel-heading span {
+					.title span {
 						text-decoration: underline;
 					}
-					.panel-heading small {
+					.title small {
 						text-decoration: none;
 					}
 				}
