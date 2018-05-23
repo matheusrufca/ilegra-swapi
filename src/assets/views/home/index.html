@@ -1,8 +1,6 @@
 <div class="view-page home-view row">
     <aside class="sidebar">
-        <div class="sidebar-menu list-group">
-            <a href="" ui-href="{{item.resource}}" ng-bind="item.title" ng-repeat="item in home.sidebar" class="list-group-item list-group-item-action text-capitalize"></a>
-        </div>
+        <sidebar-menu items="main.sections" />
     </aside>
     <main class="view-content">
         

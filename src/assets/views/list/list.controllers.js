@@ -3,26 +3,38 @@
 
     angular
         .module('app.ui.list.controllers')
+        .controller('StarshipsController', StarshipsController)
         .controller('ListController', ListController);
 
 
+    function StarshipsController($scope, viewName, Items) {
+        var view = this;
+
+        angular.extend(view, {
+            resourceType: viewName,
+            items: Items.results
+        });
+
+        console.debug('StarshipsController', $scope, view, viewName);
+    }
+
     // ListController.$inject = ['Movies'];
 
-    function ListController($scope, APP_SIDEBAR_ITEMS, Items) {
+    function ListController($scope) {
         var self = {},
-            vm = this;
+            viewParent = $scope.view,
+            view = this;
 
-        angular.extend(vm, {
-            sidebar: APP_SIDEBAR_ITEMS || [],
+        angular.extend(view, {
             page: 1,
-            totalPages: _getTotalPages(Items.count),
-            items: Items.results,
+            totalPages: _getTotalPages(viewParent.items.count),
+            items: viewParent.items.results,
             pagination: _getPagination
         });
 
 
 
-        console.debug('ListController', vm);
+        console.debug('ListController', view);
 
 
 
@@ -31,7 +43,7 @@
             if (angular.isArray(self.pagination))
                 pagination = self.pagination;
             else
-                pagination = new Array(vm.totalPages);
+                pagination = new Array(view.totalPages);
 
             return pagination;
         }

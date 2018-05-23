@@ -24,12 +24,15 @@
 
 
 	function stateConfig($stateProvider, $urlRouterProvider) {
-		$stateProvider.state('list', {
-			url: '/list',
+		$stateProvider.state('starships', {
+			url: '/starships',
 			templateUrl: 'views/list/index.html',
-			controller: 'ListController',
-			controllerAs: 'list',
+			controller: 'StarshipsController',
+			controllerAs: 'view',
 			resolve: {
+				viewName: function () {
+					return 'starships';
+				},
 				Items: getResource('starships')
 				// Items: getResource('planets')
 				// Movies: getResource('films'),
