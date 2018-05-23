@@ -3,8 +3,9 @@
 
     angular
         .module('mr.swapi', ['xyz.angular.swapi'])
-        .factory('StarWarsMoviesService', StarWarsMoviesService)
         .factory('StarWarsApiService', StarWarsApiService);
+
+    // DEPRECATED BUT NOT SURE IF SHOULD REMOVE NOW
 
     StarWarsMoviesService.$inject = ['$q', 'swapiService'];
 
@@ -25,7 +26,7 @@
                 })
 
             return df.promise;
-        };
+        }
 
         function getMovies() {
             var df = $q.defer();
@@ -41,7 +42,7 @@
                 })
 
             return df.promise;
-        };
+        }
 
         return {
             getMovie: getMovie,

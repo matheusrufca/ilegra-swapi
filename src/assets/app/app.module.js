@@ -1,17 +1,51 @@
 (function (angular) {
-    angular
-        .module('app', [
-            'libraries',
-            'app.ui.home',
-            'app.ui.list',
-            'app.ui.detail'
-        ])
-        .config(stateConfig);
+    'use strict';
 
-    function MainController($rootScope) {
-        $scope.title = 'Star Wars WIKI';
-        $scope.sections = [];
-    };
+    angular.module('app.constants', []);
+    angular.module('app.helpers', []);
+    angular.module('app.services', []);
+    angular.module('app.configs', []);
+
+
+    angular.module('app.ui', [
+        'app.ui.home',
+        'app.ui.list',
+        'app.ui.detail'
+    ]);
+
+    angular.module('app', [
+        'libraries',
+        'app.constants',
+        'app.helpers',
+        'app.services',
+        'app.ui'
+    ]);
+
+    angular.module('app.constants').constant('appSidebarItens', [{
+        title: 'Movies',
+        resource: 'films',
+        url: '/movies'
+    }, {
+        title: 'Starships',
+        resource: 'starships',
+        url: '/starships'
+    }, {
+        title: 'Vehicles',
+        resource: 'vehicles',
+        url: '/vehicles'
+    }, {
+        title: 'Species',
+        resource: 'species',
+        url: '/species'
+    }, {
+        title: 'Planets',
+        resource: 'planets',
+        url: '/planets'
+    }]);
+
+
+    angular.module('app.configs').config(stateConfig)
+
 
     stateConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -23,4 +57,6 @@
 
         $urlRouterProvider.otherwise('/home');
     };
+
+
 })(window.angular);

@@ -30,10 +30,10 @@ var libs = [
 ];
 
 var scripts = [
+	'./src/assets/app/libraries.module.js',
 	'./src/assets/app/components/*.js',
-	'./src/assets/app/app.libraries.module.js',
 	'./src/assets/views/**/*.js',
-	'./src/assets/app/app.module.js'
+	'./src/assets/app/app.*.js'
 ];
 
 gulp.task('sass', function () {
@@ -62,15 +62,18 @@ gulp.task('images', function () {
 });
 
 gulp.task('html', function () {
+	gulp.src(sourceDirectories.main + 'assets/src/*.html')
+		.pipe(gulp.dest(distDirectories.main));
+
 	gulp.src(sourceDirectories.main + 'assets/views/home/*.html')
 		.pipe(gulp.dest(distDirectories.main + 'views/home/'));
 
 	gulp.src(sourceDirectories.main + 'assets/views/detail/*.html')
 		.pipe(gulp.dest(distDirectories.main + 'views/detail/'));
 
-		
+
 	gulp.src(sourceDirectories.main + 'assets/views/list/*.html')
-	.pipe(gulp.dest(distDirectories.main + 'views/list/'));
+		.pipe(gulp.dest(distDirectories.main + 'views/list/'));
 
 
 	gulp.src(sourceDirectories.main + "*.html")

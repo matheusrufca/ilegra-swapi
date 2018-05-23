@@ -5,7 +5,7 @@
 	templateUrl = 'views/detail/movie-info.tpl.html';
 
 	angular
-		.module('app.ui.detail.directives', [])
+		.module('app.ui.detail.directives')
 		.directive('movieInfo', movieInfoDirective);
 
 	movieInfoDirective.$inject = ['$window', '$timeout', '$compile', '$rootScope', 'MoviePosterService'];

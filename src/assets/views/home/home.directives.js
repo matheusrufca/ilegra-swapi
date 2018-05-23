@@ -2,17 +2,17 @@
 	'use strict';
 	var templateUrl;
 
-	templateUrl = 'views/home/tpl-movie-view.html'
+	templateUrl = 'views/list/tpl-movie-view.html'
 
 	angular
-		.module('app.ui.home.directives', [])
-		.directive('movieItemView', movieItemView);
-
-	movieItemView.$inject = ['MoviePosterService'];
+		.module('app.ui.list.directives')
+		.directive('movieItemView', movieItemViewDirective);
 
 
+	movieItemViewDirective.$inject = ['MoviePosterService'];
 
-	function movieItemView(MoviePosterService) {
+
+	function movieItemViewDirective(MoviePosterService) {
 		var self = {},
 			linkFn;
 
