@@ -6,6 +6,13 @@ To run the app, make sure you have Node installed.
 
 Run following commands
 
+
+```
+npm i http-server
+npm start
+```
+
+or if you intent to run as developer 
 ```
 npm install
 bower install

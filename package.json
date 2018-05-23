@@ -1,9 +1,18 @@
 {
   "name": "ilegra-swapi",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/app.js",
+  "version": "2.0.0",
+  "description": "Star Wars wiki",
+  "author": "Matheus Rufca <matheus.rufca@gmail.com>",
+  "homepage": "https://github.com/matheusrufca/ilegra-swapi",
+  "files": [
+
+  ],
+  "main": "dist/",
+  "scripts": {
+    "start": "http-server ./dist"
+  },
   "dependencies": {
+    "http-server":"^0.11.1",
     "serve": "^6.5.7"
   },
   "devDependencies": {
@@ -11,7 +20,11 @@
     "gulp-sass": "^4.0.1",
     "gulp-concat": "^2.6.1",
     "serve": "^6.5.7"
+    
   },
-  "author": "Matheus Rufca",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matheusrufca/ilegra-swapi.git"
+  },
   "license": "ISC"
 }

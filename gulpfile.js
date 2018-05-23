@@ -49,8 +49,6 @@ gulp.task('sass', function () {
 		.pipe(gulp.dest(distDirectories.fonts + 'bootstrap/'));
 });
 
-
-
 gulp.task('libs', function () {
 	gulp.src(libs)
 		.pipe(concat('libs.js'))
@@ -88,6 +86,9 @@ gulp.task('html', function () {
 		.pipe(gulp.dest(distDirectories.main));
 });
 
+gulp.task('scripts', ['libs', 'appScripts']);
+
+
 gulp.task('default', ['sass', 'scripts', 'html', 'images'], function () {
 	gulp.watch(sourceDirectories.sass + '**/*.scss', ['sass']);
 	gulp.watch(sourceDirectories.sassPartials + '**/*.scss', ['sass']);
@@ -96,5 +97,4 @@ gulp.task('default', ['sass', 'scripts', 'html', 'images'], function () {
 	gulp.watch(sourceDirectories.views + '**/*.html', ['html']);
 });
 
-
-gulp.task('scripts', ['libs', 'appScripts']);
+gulp.task('build', ['sass', 'scripts', 'html', 'images']);
