@@ -981,6 +981,26 @@
 // created string -- the ISO 8601 date format of the time that this resource was created.
 // edited string -- the ISO 8601 date format of the time that this resource was edited.
 (function (angular) {
+	'use strict';
+
+
+	// Initialize module of this module :)
+
+	angular.module('app.ui.list.configs', []);
+	angular.module('app.ui.list.directives', []);
+	angular.module('app.ui.list.services', []);
+	angular.module('app.ui.list.controllers', []);
+
+	angular.module('app.ui.list', [
+		'libraries',
+		'app.ui.list.configs',
+		'app.ui.list.services',
+		'app.ui.list.directives',
+		'app.ui.list.controllers'
+	]);
+
+})(window.angular);
+(function (angular) {
     'use strict';
 
     // Initialize module of this module :)
@@ -1027,26 +1047,6 @@
 })(window.angular);
 (function (angular) {
 	'use strict';
-
-
-	// Initialize module of this module :)
-
-	angular.module('app.ui.list.configs', []);
-	angular.module('app.ui.list.directives', []);
-	angular.module('app.ui.list.services', []);
-	angular.module('app.ui.list.controllers', []);
-
-	angular.module('app.ui.list', [
-		'libraries',
-		'app.ui.list.configs',
-		'app.ui.list.services',
-		'app.ui.list.directives',
-		'app.ui.list.controllers'
-	]);
-
-})(window.angular);
-(function (angular) {
-	'use strict';
 	angular.module('app.ui.movie.services', []);
 	angular.module('app.ui.movie.directives', []);
 	angular.module('app.ui.movie.controllers', []);
@@ -1077,67 +1077,6 @@
 				}]
 			}
 		});
-	};
-})(window.angular);
-(function (angular) {
-    'use strict';
-
-    angular
-        .module('app.ui.home.controllers')
-        .controller('HomeController', HomeController);
-
-    // HomeController.$inject = ['Movies'];
-
-    function HomeController(APP_SIDEBAR_ITEMS, Movies) {
-        var vm = this;
-
-        angular.extend(vm, {
-            movies: Movies.results
-        });
-
-        console.debug('HomeController', vm);
-    };
-
-})(window.angular);
-(function (angular) {
-	'use strict';
-	var templateUrl;
-
-	templateUrl = 'views/home/tpl-movie-view.html'
-
-	angular
-		.module('app.ui.home.directives')
-		.directive('movieItemView', movieItemViewDirective);
-
-
-	movieItemViewDirective.$inject = ['MoviePosterService'];
-
-
-	function movieItemViewDirective(MoviePosterService) {
-		var self = {},
-			linkFn;
-
-		linkFn = function (scope, element, attrs) {
-
-			scope.content.id = getContentId(scope.content.url);
-
-			MoviePosterService.getPoster(scope.content.title).then(function (posterUrl) {
-				scope.content.posterUrl = posterUrl;
-			});
-		};
-
-		return {
-			restrict: 'E',
-			link: linkFn,
-			templateUrl: templateUrl,
-			scope: {
-				content: '='
-			}
-		};
-
-		function getContentId(contentUrl) {
-			return (contentUrl || '').split('/').splice(-2).join('');
-		};
 	};
 })(window.angular);
 (function (angular) {
@@ -1346,6 +1285,67 @@
 		}
 	}
 
+})(window.angular);
+(function (angular) {
+    'use strict';
+
+    angular
+        .module('app.ui.home.controllers')
+        .controller('HomeController', HomeController);
+
+    // HomeController.$inject = ['Movies'];
+
+    function HomeController(APP_SIDEBAR_ITEMS, Movies) {
+        var vm = this;
+
+        angular.extend(vm, {
+            movies: Movies.results
+        });
+
+        console.debug('HomeController', vm);
+    };
+
+})(window.angular);
+(function (angular) {
+	'use strict';
+	var templateUrl;
+
+	templateUrl = 'views/home/tpl-movie-view.html'
+
+	angular
+		.module('app.ui.home.directives')
+		.directive('movieItemView', movieItemViewDirective);
+
+
+	movieItemViewDirective.$inject = ['MoviePosterService'];
+
+
+	function movieItemViewDirective(MoviePosterService) {
+		var self = {},
+			linkFn;
+
+		linkFn = function (scope, element, attrs) {
+
+			scope.content.id = getContentId(scope.content.url);
+
+			MoviePosterService.getPoster(scope.content.title).then(function (posterUrl) {
+				scope.content.posterUrl = posterUrl;
+			});
+		};
+
+		return {
+			restrict: 'E',
+			link: linkFn,
+			templateUrl: templateUrl,
+			scope: {
+				content: '='
+			}
+		};
+
+		function getContentId(contentUrl) {
+			return (contentUrl || '').split('/').splice(-2).join('');
+		};
+	};
 })(window.angular);
 (function (angular) {
     'use strict';

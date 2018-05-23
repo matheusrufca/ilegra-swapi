@@ -6246,7 +6246,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   float: none;
   margin: 0 auto; }
 
-.text-ellipsis, .movie-item-view .title {
+.text-ellipsis, .home-view .movie-item-view .title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
@@ -6266,19 +6266,19 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 .text-left {
   text-align: left; }
 
-.flexbox, .view-page, .home-view {
+.flexbox, .view-page {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
-  .flexbox .grow, .view-page .grow, .home-view .grow, .flexbox main.page-content, .flexbox .view-page main, .view-page .flexbox main, .view-page main, .flexbox .home-view main, .home-view .flexbox main, .home-view main {
+  .flexbox .grow, .view-page .grow, .flexbox main.page-content, .flexbox .view-page main, .view-page .flexbox main, .view-page main {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; }
 
-.flexbox.flexbox-column, .flexbox-column.view-page, .flexbox-column.home-view {
+.flexbox.flexbox-column, .flexbox-column.view-page {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-flow: column;
@@ -12551,7 +12551,7 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
   float: none;
   margin: 0 auto; }
 
-.text-ellipsis, .movie-item-view .title {
+.text-ellipsis, .home-view .movie-item-view .title {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
@@ -12571,19 +12571,19 @@ a.list-group-item-danger.active:hover, a.list-group-item-danger.active:focus {
 .text-left {
   text-align: left; }
 
-.flexbox, .view-page, .home-view {
+.flexbox, .view-page {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center; }
-  .flexbox .grow, .view-page .grow, .home-view .grow, .flexbox main.page-content, .flexbox .view-page main, .view-page .flexbox main, .view-page main, .flexbox .home-view main, .home-view .flexbox main, .home-view main {
+  .flexbox .grow, .view-page .grow, .flexbox main.page-content, .flexbox .view-page main, .view-page .flexbox main, .view-page main {
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
     flex-grow: 1; }
 
-.flexbox.flexbox-column, .flexbox-column.view-page, .flexbox-column.home-view {
+.flexbox.flexbox-column, .flexbox-column.view-page {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-flow: column;
@@ -12675,49 +12675,46 @@ main.page-content {
 .page-title {
   margin-bottom: 30px; }
 
-.home-view main {
-  padding: 30px; }
-
-.movie-view-wrapper {
+.home-view .movie-view-wrapper {
   margin-bottom: 20px; }
 
-.movie-item-view {
+.home-view .movie-item-view {
   position: relative;
   display: inline-block;
   margin: auto;
   transition: 0.5s; }
-  .movie-item-view .spinner {
+  .home-view .movie-item-view .spinner {
     width: 30%;
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto; }
-  .movie-item-view .movie-poster {
+  .home-view .movie-item-view .movie-poster {
     width: 100%;
     max-width: 100%;
     max-height: 100%;
     margin-left: auto;
     margin-right: auto; }
-  .movie-item-view .title {
+  .home-view .movie-item-view .title {
     padding: 15px;
     font-size: 1.5rem;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     font-weight: bold; }
-  .movie-item-view .hover-title, .movie-item-view .title {
+  .home-view .movie-item-view .hover-title, .home-view .movie-item-view .title {
     visibility: hidden;
     position: absolute;
     bottom: 0;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     /* TODO: add animation */ }
-  .movie-item-view .poster {
+  .home-view .movie-item-view .poster {
     opacity: 0.7; }
-    .movie-item-view .poster:hover {
+    .home-view .movie-item-view .poster:hover {
       opacity: 1; }
-  .movie-item-view:hover .title {
+  .home-view .movie-item-view:hover .title {
     visibility: visible; }
-  .movie-item-view:hover .poster {
+  .home-view .movie-item-view:hover .poster {
     opacity: 1; }
 
 .movie-view .movie-poster {
