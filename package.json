@@ -2,19 +2,14 @@
   "name": "ilegra-swapi",
   "version": "1.0.0",
   "description": "",
-  "main": "karma.conf.js",
+  "main": "dist/app.js",
   "dependencies": {
-    "karma": "^2.0.2",
-    "karma-cli": "^1.0.1",
-    "karma-ng-html2js-preprocessor": "^1.0.0"
+    "serve": "^6.5.7"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^4.0.1",
     "gulp-concat": "^2.6.1",
-    "karma": "^2.0.2",
-    "karma-chrome-launcher": "^2.2.0",
-    "karma-jasmine": "^1.1.2",
     "serve": "^6.5.7"
   },
   "author": "Matheus Rufca",

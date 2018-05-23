@@ -13,6 +13,7 @@ var sourceDirectories = {
 };
 
 var distDirectories = {
+	'fonts': './dist/assets/fonts/',
 	'stylesheets': './dist/assets/',
 	'scripts': './dist/assets/',
 	'images': './dist/assets/img/',
@@ -21,7 +22,6 @@ var distDirectories = {
 
 var libs = [
 	'./bower_components/jquery/dist/jquery.min.js',
-	'./bower_components/slick-carousel/slick/slick.min.js',
 	'./bower_components/angular/angular.min.js',
 	'./bower_components/angular-animate/angular-animate.min.js',
 	'./bower_components/angular-mocks/angular-mocks.js',
@@ -37,13 +37,16 @@ var scripts = [
 	'./src/assets/app/app.*.js',
 	'./src/assets/app/ui-components/*.js',
 	'./src/assets/views/**/*.module.js',
-	'./src/assets/views/**/*.js'	
+	'./src/assets/views/**/*.js'
 ];
 
 gulp.task('sass', function () {
 	gulp.src(sourceDirectories.sass + '*.scss')
 		.pipe(sass.sync().on('error', sass.logError))
 		.pipe(gulp.dest(distDirectories.stylesheets));
+
+	gulp.src('./bower_components/bootstrap-sass/assets/fonts/bootstrap/**')
+		.pipe(gulp.dest(distDirectories.fonts + 'bootstrap/'));
 });
 
 
@@ -52,6 +55,7 @@ gulp.task('libs', function () {
 	gulp.src(libs)
 		.pipe(concat('libs.js'))
 		.pipe(gulp.dest(distDirectories.scripts));
+
 });
 
 gulp.task('appScripts', function () {
@@ -72,8 +76,8 @@ gulp.task('html', function () {
 	gulp.src(sourceDirectories.main + 'assets/views/home/*.html')
 		.pipe(gulp.dest(distDirectories.main + 'views/home/'));
 
-	gulp.src(sourceDirectories.main + 'assets/views/detail/*.html')
-		.pipe(gulp.dest(distDirectories.main + 'views/detail/'));
+	gulp.src(sourceDirectories.main + 'assets/views/movie/*.html')
+		.pipe(gulp.dest(distDirectories.main + 'views/movie/'));
 
 
 	gulp.src(sourceDirectories.main + 'assets/views/list/*.html')
