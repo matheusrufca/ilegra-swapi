@@ -8,7 +8,7 @@
 
     // ListController.$inject = ['Movies'];
 
-    function ListController(APP_SIDEBAR_ITEMS, Items) {
+    function ListController($scope, APP_SIDEBAR_ITEMS, Items) {
         var self = {},
             vm = this;
 
@@ -49,5 +49,4 @@
             return totalPages || 1;
         }
     }
-
 })(window.angular);
