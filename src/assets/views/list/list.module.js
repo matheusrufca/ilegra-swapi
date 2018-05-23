@@ -27,11 +27,14 @@
 		$stateProvider.state('starships', {
 			url: '/starships',
 			templateUrl: 'views/list/index.html',
-			controller: 'StarshipsController',
+			controller: 'ListPageController',
 			controllerAs: 'view',
 			resolve: {
-				viewName: function () {
+				resourceType: function () {
 					return 'starships';
+				},
+				modelType: function () {
+					return 'starship';
 				},
 				Items: getResource('starships')
 				// Items: getResource('planets')

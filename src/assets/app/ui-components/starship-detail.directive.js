@@ -14,7 +14,7 @@
 
 		headingTemplate = [
 			'<h3 class="panel-heading">',
-			'<span ng-bind="starship.name"></span> <small ng-bind="starship.model"></small>',
+			'<span ng-bind="model.name"></span> <small ng-bind="model.model"></small>',
 			'</h3>',
 		].join('');
 
@@ -22,25 +22,25 @@
 			'<div class="row"><div class="col-md-6">',
 			'<dl class="dl-horizontal">',
 			'<dt ng-bind="getPropertyName(\'starship_class\')" class="text-capitalize" />',
-			'<dd ng-bind="starship.starship_class" />',
+			'<dd ng-bind="model.starship_class" />',
 			'<dt ng-bind="getPropertyName(\'manufacturer\')" class="text-capitalize" />',
-			'<dd ng-bind="starship.manufacturer" />',
+			'<dd ng-bind="model.manufacturer" />',
 			'<dt ng-bind="getPropertyName(\'cost_in_credits\')" class="text-capitalize" />',
-			'<dd ng-bind="starship.cost_in_credits | currency" />',
+			'<dd ng-bind="model.cost_in_credits | currency" />',
 			'<dt ng-bind="getPropertyName(\'length\')" class="text-capitalize" />',
-			'<dd ng-bind="starship.length" />',
+			'<dd ng-bind="model.length" />',
 			'</dl>',
 			'</div>',
 			'<div class="col-md-6">',
 			'<dl class="dl-horizontal">',
 			'<dt ng-bind="getPropertyName(\'crew\')" class="text-capitalize" />',
-			'<dd ng-bind="starship.crew" />',
+			'<dd ng-bind="model.crew" />',
 			'<dt ng-bind="getPropertyName(\'passengers\')" class="text-capitalize" />',
-			'<dd ng-bind="starship.passengers" />',
+			'<dd ng-bind="model.passengers" />',
 			'<dt ng-bind="getPropertyName(\'max_atmosphering_speed\')" class="text-capitalize" />',
-			'<dd ng-bind="starship.max_atmosphering_speed" />',
+			'<dd ng-bind="model.max_atmosphering_speed" />',
 			'<dt ng-bind="getPropertyName(\'hyperdrive_rating\')" class="text-capitalize" />',
-			'<dd ng-bind="starship.hyperdrive_rating" />',
+			'<dd ng-bind="model.hyperdrive_rating" />',
 			'</dl>',
 			'</div>',
 			'</div>',
@@ -66,7 +66,7 @@
 			controller: ['$scope', directiveController],
 			retrict: 'E',
 			scope: {
-				starship: '='
+				model: '='
 			}
 		};
 
@@ -92,13 +92,13 @@
 })(window.angular);
 
 
-// name string -- The name of this starship. The common name, such as "Death Star".
-// model string -- The model or official name of this starship. Such as "T-65 X-wing" or "DS-1 Orbital Battle Station".
+// name string -- The name of this model. The common name, such as "Death Star".
+// model string -- The model or official name of this model. Such as "T-65 X-wing" or "DS-1 Orbital Battle Station".
 // starship_class string -- The class of this starship, such as "Starfighter" or "Deep Space Mobile Battlestation"
-// manufacturer string -- The manufacturer of this starship. Comma separated if more than one.
+// manufacturer string -- The manufacturer of this model. Comma separated if more than one.
 // cost_in_credits string -- The cost of this starship new, in galactic credits.
 // length string -- The length of this starship in meters.
-// crew string -- The number of personnel needed to run or pilot this starship.
+// crew string -- The number of personnel needed to run or pilot this model.
 // passengers string -- The number of non-essential people this starship can transport.
 // max_atmosphering_speed string -- The maximum speed of this starship in the atmosphere. "N/A" if this starship is incapable of atmospheric flight.
 // hyperdrive_rating string -- The class of this starships hyperdrive.

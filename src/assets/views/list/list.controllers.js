@@ -3,19 +3,20 @@
 
     angular
         .module('app.ui.list.controllers')
-        .controller('StarshipsController', StarshipsController)
+        .controller('ListPageController', ListPageController)
         .controller('ListController', ListController);
 
 
-    function StarshipsController($scope, viewName, Items) {
+    function ListPageController($scope, resourceType, modelType, Items) {
         var view = this;
 
         angular.extend(view, {
-            resourceType: viewName,
+            resourceType: resourceType,
+            modelType: modelType,
             items: Items
         });
 
-        console.debug('StarshipsController', $scope, view, viewName);
+        console.debug('ListPageController', $scope, view);
     }
 
     // ListController.$inject = ['Movies'];
