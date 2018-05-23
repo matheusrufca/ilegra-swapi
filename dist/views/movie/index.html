@@ -1,0 +1,26 @@
+<div class="view-page movie-view row">
+    <aside class="sidebar">
+        <sidebar-menu items="main.sections" />
+    </aside>
+    <main class="view-content">
+        <!-- BRADCUMB -->
+        <div>
+            <ol class="breadcrumb">
+                <li>
+                    <!-- TODO: use home icon -->
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="" class="text-capitalize">Movie</a>
+                </li>
+                <li>
+                    <a href="" class="text-capitalize" ng-bind="view.movie.title"></a>
+                </li>
+            </ol>
+        </div>
+
+        <div class="panel">
+            <movie-info content="view.movie" />
+        </div>
+    </main>
+</div>

@@ -1,0 +1,26 @@
+<div class="view-page home-view row">
+    <aside class="sidebar">
+        <sidebar-menu items="main.sections" />
+    </aside>
+    <main class="view-content">
+
+        <h2 class="page-title">Star Wars Movies
+            <!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
+        </h2>
+        <div class="row movies-container">
+                <div ng-repeat="x in home.movies | orderBy: 'release_date'" class="movie-view-wrapper col-xs-6 col-sm-3 col-md-3 text-center">
+                    <movie-item-view content="x" />
+                </div>
+            </div>
+    </main>
+</div>
+
+
+<!-- 
+<div carousel settings="home.sliderSettings">
+    <div class="items-container" style="width: 100%;">
+        <div ng-repeat="item in home.movies">
+            <div ng-bind="item.title" class="text-center"></div>
+        </div>
+    </div>
+</div> -->
