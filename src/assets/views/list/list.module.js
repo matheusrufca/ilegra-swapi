@@ -8,10 +8,17 @@
 	angular.module('app.ui.list.services', []);
 	angular.module('app.ui.list.controllers', []);
 
-	angular.module('app.ui.list', ['libraries', 'app.ui.list.services', 'app.ui.list.directives', 'app.ui.list.controllers']);
+	angular.module('app.ui.list', [
+		'libraries',
+		'app.ui.list.services',
+		'app.ui.list.directives',
+		'app.ui.list.controllers'
+	]);
 
 
 	// set module config like $route configs
+
+	angular.module('app.ui.list').config(stateConfig);
 
 	stateConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -20,7 +27,7 @@
 		$stateProvider.state('list', {
 			url: '/list',
 			templateUrl: 'views/list/index.html',
-			controller: 'ListController as list',
+			controller: 'ListController',
 			controllerAs: 'list',
 			resolve: {
 				Items: getResource('planets')
